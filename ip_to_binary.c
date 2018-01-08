@@ -6,7 +6,7 @@ int binary_conv(int);
 
 int main(void) {
 
-    	int num, bin, a;
+    	int num, bin;
     	char  *str =  malloc(sizeof(char) * 16), *str2;
     	unsigned char value[4] = {0};
     	size_t index = 0;
