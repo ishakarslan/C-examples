@@ -2,13 +2,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#define MAX_8BIT 255
+
 int binary_conv(int);
 
 int main(void) {
 
     	int num, bin;
     	char  *str =  malloc(sizeof(char) * 16), *str2;
-    	unsigned char value[4] = {0};
+    	int value[4] = {0};
     	size_t index = 0;
 
 	printf("Enter an IP Address: \n");
@@ -28,9 +30,13 @@ int main(void) {
 	printf("\nBinary Conv is :\n\n", str);
 
 	for (num = 0; num < 4; ++num){
+		if(value[num] > MAX_8BIT){
+			printf("Invalid IP Address"); break;
+		} else {
 		bin = binary_conv(value[num]);
 	printf("%08d ", bin);
-  	}
+  		}
+	}
 
 	printf("\n");
 	return 0;
