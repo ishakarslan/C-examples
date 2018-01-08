@@ -4,7 +4,6 @@
 
 int binary_conv(int);
 
-
 int main(void) {
 
     	int num, bin, a;
@@ -42,7 +41,7 @@ int binary_conv(int num)
 {
     	if (num == 0){
         	return 0;
-    	}else{
+    	} else {
         	return (num % 2) + 10 * binary_conv(num / 2);
     	}
 }
