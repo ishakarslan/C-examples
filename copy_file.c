@@ -8,12 +8,10 @@
 
 void count_obj(char *filename);
 
-
 int main(int argc, char *argv[])
 {
 	FILE *ptr1, *ptr2;
 	char c;
-
 
 	if(argc < 3){
 		fprintf(stderr, "Usage: %s [srcfile]  [dstfile]\n", argv[0] );
