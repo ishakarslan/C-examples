@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <error.h> /* for exit argument */
+#include <ctype.h>
 
 #define IN 0
 #define OUT 1
@@ -54,7 +55,7 @@ void count_obj(char *filename)
                 ++nc;
                 if(c =='\n')
                         ++nl;
-                if(c >= '0' && c <= '9' )
+                if(c >= '0' && c <= '9' ) /* can use if(isdigit(c))*/
                         ++nd;
                 if(c == ' ' || c == '\n'  || c == '\t')
                         state = OUT;
