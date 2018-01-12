@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
 	ptr1 = fopen(argv[1], "r"); /* argument 1 to pointer */
 	if (ptr1 == NULL) {
-		printf("Could not open file");
+		fprintf(stderr, "Could not open file");
 		exit (EXIT_FAILURE);
 	}
 
