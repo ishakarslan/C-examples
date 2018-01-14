@@ -7,7 +7,7 @@
 
 #define MAX_8BIT 255
 
-char isValidIpAddress(char *ipAddress);
+char is_valid_ip(char *ipAddress);
 int binary_conv(int);
 
 int main(void) {
@@ -22,7 +22,7 @@ int main(void) {
 
     	str2 = str;
 
-	if(!isValidIpAddress(str2)){
+	if(!is_valid_ip(str2)){
 		printf("Please enter a valid IP Address ...\n");
 		exit(EXIT_FAILURE);
 	}
@@ -69,7 +69,7 @@ int binary_conv(int num)
     	}
 }
 
-char isValidIpAddress(char *ipAddress)
+char is_valid_ip(char *ipAddress)
 {
     	struct sockaddr_in sa;
     	int result = inet_pton(AF_INET, ipAddress, &(sa.sin_addr));
