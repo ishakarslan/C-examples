@@ -1,5 +1,5 @@
 /*
- *  * C program to convert the given binary number into decimal
+ *  * C program to convert the given binary ip address to decimal ip address, convert binary ip to decimal
  *   */
 #include <stdio.h>
 #include <stdlib.h>
