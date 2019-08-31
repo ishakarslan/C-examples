@@ -1,0 +1,58 @@
+/*
+ *  * C program to convert the given binary number into decimal
+ *   */
+#include <stdio.h>
+#include <stdlib.h>
+#include <arpa/inet.h>
+#include <error.h>
+#define IPLEN 4
+
+int todecimal(int num);
+char is_valid_ip(char *ipAddress);
+int convertoip();
+
+char main(void){
+	convertoip();
+}
+
+
+int convertoip() {
+	//int array[4] = {0,0,0,0};
+	int array[4] = {};
+	int ip,i;
+	printf("binary deger girin :\t");
+
+	for (i = 0; i< IPLEN;i++){
+		scanf("%d", &array[i]);
+		ip = todecimal(array[i]);
+		if(ip < 0 || ip > 255 || array[i] % 10 != 0 && array[i] % 10 != 1){
+			printf("hatta  gecerli bir binary girin\n");
+			exit(EXIT_FAILURE);
+		}
+        printf("%d", ip);
+		if(i<3){
+			printf(".");
+		}
+	}
+	printf("\n");
+}
+
+int todecimal(int num){
+	int i, k, decimal_val, given, bol, base = 1;
+	decimal_val = 0;
+	//given = num;
+		while(num>0){
+			bol = num % 10;
+			decimal_val = decimal_val + bol * base;
+			num = num / 10;
+			base = base * 2;
+	}
+	return decimal_val;
+}
+
+char is_valid_ip(char *ipAddress)
+{
+    	struct sockaddr_in sa;
+    	int result = inet_pton(AF_INET, ipAddress, &(sa.sin_addr));
+    	return result != 0;
+}
